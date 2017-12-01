@@ -1,5 +1,22 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+
+
+/*
+ * HashMap 是基于hash表实现的 Map接口，key和value 都可以为 null，但必须保证key的唯一性
+ * 其不保证映射的顺序，通过哈希码快速查找，添加和删除操作效率更高
+ * 
+ * 
+ * TreeMap 集合内映射有一定顺序；根据key按一定顺序排列，不允许key对象为null
+ * 添加、删除、查找效率相对较慢
+ * 
+ * 
+ * 
+ * 
+ * */
+
+
 
 public class MyMap {
 	
@@ -29,6 +46,14 @@ public class MyMap {
 		
 		println("myMap中所有的key: " + myMap.keySet());
 		println("myMap中所有的value: " + myMap.values());
+		
+		println("遍历HashMap ---------------:");
+		Iterator<String> myIterator = myMap.keySet().iterator();
+		while (myIterator.hasNext()) {
+			String key = myIterator.next();
+			String value = myMap.get(key);
+			println("key = " + key + ", value = " + value);
+		}
 		
 	}
 
